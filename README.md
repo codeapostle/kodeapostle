@@ -9,4 +9,4 @@
 </h1>
 <h3 align="center">Probably the most beautiful 😍 gatsby starter template</h3>
 
-This starter consists of ant design system you can use it for your personal blog. I have give a lot of time in developing this starter because I found that there were not much starters with a very good design. Please give a star to this project if you have like it to encourage me 😄. Thank you.
+This starter consists of ant design system you can use it for your personal blog. I have give a lot of time in developing this starter because I found that there were not much 

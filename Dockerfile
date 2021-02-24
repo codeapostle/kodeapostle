@@ -1,19 +1,15 @@
-FROM node:14-alpine
+FROM node:12
 
-RUN npm install gatsby serve -g
-
-COPY package.json blog/package.json
-
-RUN cd blog
-
-RUN yarn install
+RUN npm install serve -g
 
 COPY . .
 
-RUN gatsby build
+RUN yarn install
+
+RUN npm run build
 
 Expose 4000
 
-CMD serve build -l 4000
+CMD serve public -l 4000
 
 
