@@ -1,9 +1,19 @@
 kind: pipeline
-type: docker
+type: exec
 name: default
 
 steps:
-- name: test
-  image: golang
+
+- name: build
   commands:
-  - go build
+  - sudo docker build . -t kodapostle-blog:${DRONE_BUILD_NUMBER}
+  when:
+    branch:
+    - main
+
+- name: deploy
+  commands:
+  - sudo docker run kodapostle-blog:${DRONE_BUILD_NUMBER} -d --name blog -p 4000:4000
+  when:
+    branch:
+    - main
