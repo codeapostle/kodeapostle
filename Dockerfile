@@ -1,6 +1,6 @@
 FROM node:12-alpine
 
-RUN RUN apk --update --no-cache \
+RUN apk --update --no-cache \
 		add  \
     automake \
 		git \
