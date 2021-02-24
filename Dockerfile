@@ -6,11 +6,11 @@ COPY package.json blog/package.json
 
 RUN cd blog
 
-RUN yarn install
-
 COPY . .
 
-RUN gatsby build
+RUN yarn install
+
+RUN npm run build
 
 Expose 4000
 
