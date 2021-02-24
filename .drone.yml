@@ -14,7 +14,7 @@ steps:
 - name: deploy
   commands:
   - sudo docker container stop blog
-  - sudo docker container remove blog
+  - sudo docker container rm blog
   - sudo docker run --name blog -d  -p 4000:4000 kodapostle-blog:${DRONE_BUILD_NUMBER}
   when:
     branch:
