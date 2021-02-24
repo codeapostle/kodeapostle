@@ -6,14 +6,14 @@ steps:
 
 - name: build
   commands:
-  - docker build . -t kodapostle-blog:${DRONE_BUILD_NUMBER}
+  - sudo docker build . -t kodapostle-blog:${DRONE_BUILD_NUMBER}
   when:
     branch:
     - master
 
 - name: deploy
   commands:
-  - docker run kodapostle-blog:${DRONE_BUILD_NUMBER} -d --name blog -p 127.0.0.1:80:8080
+  - sudo docker run kodapostle-blog:${DRONE_BUILD_NUMBER} -d --name blog -p 4000:4000
   when:
     branch:
     - master
