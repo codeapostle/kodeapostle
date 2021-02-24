@@ -9,7 +9,7 @@ steps:
   - sudo docker build . -t kodapostle-blog:${DRONE_BUILD_NUMBER}
   when:
     branch:
-    - master
+    - main
 
 - name: deploy
   commands:
