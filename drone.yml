@@ -1,0 +1,19 @@
+kind: pipeline
+type: exec
+name: default
+
+steps:
+
+- name: build
+  commands:
+  - docker build . -t kodapostle-blog:${DRONE_BUILD_NUMBER}
+  when:
+    branch:
+    - master
+
+- name: deploy
+  commands:
+  - docker run kodapostle-blog:${DRONE_BUILD_NUMBER} -d --name blog -p 127.0.0.1:80:8080
+  when:
+    branch:
+    - master

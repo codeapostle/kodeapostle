@@ -1,0 +1,13 @@
+{
+  "extends": "airbnb",
+  "rules": {
+    "react/prop-types": 0,
+    "react/no-danger":0,
+    "linebreak-style": 0 
+  },
+  "globals": {
+    "window": true,
+    "FormData": true,
+    "fetch": true
+  }
+}
