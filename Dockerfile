@@ -2,7 +2,7 @@ FROM node:12-alpine
 
 RUN apk --update --no-cache \
 		add  \
-    automake \
+                automake \
 		git \
 		alpine-sdk  \
 		nasm  \
