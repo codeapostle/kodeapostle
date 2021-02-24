@@ -2,18 +2,11 @@ kind: pipeline
 type: exec
 name: default
 
+platform:
+  os: linux
+  arch: amd64
+
 steps:
-
-- name: build
+- name: greeting
   commands:
-  - sudo docker build . -t kodapostle-blog:${DRONE_BUILD_NUMBER}
-  when:
-    branch:
-    - main
-
-- name: deploy
-  commands:
-  - sudo docker run kodapostle-blog:${DRONE_BUILD_NUMBER} -d --name blog -p 4000:4000
-  when:
-    branch:
-    - main
+  - echo hello world
