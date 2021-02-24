@@ -2,8 +2,6 @@ FROM node:14-alpine
 
 RUN npm install serve -g
 
-RUN cd blog
-
 COPY . .
 
 RUN npm install
