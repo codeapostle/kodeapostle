@@ -16,4 +16,4 @@ steps:
   - sudo docker run kodapostle-blog:${DRONE_BUILD_NUMBER} -d --name blog -p 4000:4000
   when:
     branch:
-    - master
+    - main
