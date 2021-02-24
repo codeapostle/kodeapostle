@@ -4,7 +4,7 @@ RUN npm install serve -g
 
 COPY . .
 
-RUN npm install
+RUN yarn install
 
 RUN npm run build
 
