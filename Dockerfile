@@ -1,5 +1,22 @@
 FROM node:12-alpine
 
+RUN RUN apk --update --no-cache \
+		add  \
+    automake \
+		git \
+		alpine-sdk  \
+		nasm  \
+		autoconf  \
+		build-base \
+		zlib \
+		zlib-dev \
+		libpng \
+		libpng-dev\
+		libwebp \
+		libwebp-dev \
+		libjpeg-turbo \
+		libjpeg-turbo-dev
+
 RUN npm install serve -g
 
 COPY . .
