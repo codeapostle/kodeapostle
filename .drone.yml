@@ -6,15 +6,16 @@ steps:
 
 - name: build
   commands:
-#   - sudo docker build . -t kodapostle-blog:${DRONE_BUILD_NUMBER}
+  - sudo docker build . -t kodapostle-blog:${DRONE_BUILD_NUMBER}
   when:
     branch:
     - main
 
 - name: deploy
   commands:
-#   - sudo docker run --name blog -d  -p 4000:4000 kodapostle-blog:${DRONE_BUILD_NUMBER}
-  - sudo docker run --name blog -d  -p 4000:4000 kodapostle-blog:16
+  - sudo docker container stop blog
+  - sudo docker container remove blog
+  - sudo docker run --name blog -d  -p 4000:4000 kodapostle-blog:${DRONE_BUILD_NUMBER}
   when:
     branch:
     - main
